@@ -4,10 +4,10 @@ import java.util.Random;
 import java.io.BufferedReader;
 
 public class Gap {
-	final static int n = 20; //航班数
-	final static int g = 5; //登机门数
-	final static int count = 5;//转机对数
-	final static int popsize = 12;//种群大小
+	final static int n = 100; //航班数
+	final static int g = 10; //登机门数
+	final static int count = 15;//转机对数
+	final static int popsize = 50;//种群大小
 	final static int iteNum = 500; //迭代代数
 	public static void main(String[] args) {
 		//读取航班文件信息
@@ -130,12 +130,13 @@ public class Gap {
 				countHyNum++;
 			}
 			countHyNum = 0;
-			
+			/*
 			for(int l =0; l<hyGene.length; l++) {
 				for(int m = 0; m < hyGene[0].length; m++)
 					System.out.print(hyGene[l][m]);
 				System.out.print("\n");
 			}
+			*/
 			System.out.println("!");
 			//生成变异基因
 			int[][] varGene = new int[popsize/2][gene[0].length];
@@ -145,11 +146,13 @@ public class Gap {
 					p--;
 				}
 			}
+			/*
 			for(int l =0; l<varGene.length; l++) {
 				for(int m = 0; m < varGene[0].length; m++)
 					System.out.print(varGene[l][m]);
 				System.out.print("\n");
 			}
+			*/
 			System.out.println("@");
 			//再次选择
 			int allNum = leftGene.length + hyGene.length + varGene.length;
@@ -162,11 +165,13 @@ public class Gap {
 			for(int p = 0; p<varGene.length; p++,countAllNum++)
 				allGene[countAllNum] = varGene[p];
 			gene = Genetic.choose(allGene, popsize, trans, dis);
+			/*
 			for(int p =0; p<gene.length; p++) {
 				for(int j = 0; j < gene[0].length; j++)
 					System.out.print(gene[p][j]);
 				System.out.print("\n");
 			}
+			*/
 			System.out.println("?");
 		}
 		System.out.println("最终结果：");
@@ -176,6 +181,13 @@ public class Gap {
 		for(int p = 0; p<result.length; p++)
 			System.out.print(result[p]);
 		System.out.print("\n");
+		/*
+		for(int i = 0; i<trans.length; i++) {
+			int from = trans[i].getFrom();
+			int to = trans[i].getTo();
+			System.out.println(trans[i].getNum() * dis[result[from]][result[to]]);
+		}
+		*/
 		System.out.println("最终转机距离为" + Genetic.transCost(result, trans, dis));
 		
 	}

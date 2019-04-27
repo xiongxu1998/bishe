@@ -8,9 +8,9 @@ import java.util.Random;
 import java.util.ArrayList;
 
 public class GenerateDate {
-	final static int n = 20;// 航班数
-	final static int g = 5;//登机门数
-	final static int count = 5;//转机的对数
+	final static int n = 100;// 航班数
+	final static int g = 10;//登机门数
+	final static int count = 15;//转机的对数
 	public static void main(String[] args) {
 		File flight = new File("flight.txt");
 		File trans = new File("trans.txt");

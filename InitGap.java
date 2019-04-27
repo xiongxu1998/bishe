@@ -74,7 +74,7 @@ public class InitGap {
 			result = true;
 		return result;
 	}
-	private static int timeToInt(String a) {
+	public static int timeToInt(String a) {
 		int result = 0;
 		String[] s = a.split(":");
 		result = Integer.parseInt(s[0]) * 60 + Integer.parseInt(s[1]);

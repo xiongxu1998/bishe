@@ -5,9 +5,9 @@ import java.util.Random;
 public class Genetic {
 	final static double pc = 0.1;//(杂交概率)
 	final static double pm = 0.1;//(变异概率)
-	final static int popsize = 10;//(种群大小)
-	final static int gateNum = 5; //登机门数
-	final static int n = 20;
+	final static int popsize = 50;//(种群大小)
+	final static int gateNum = 15; //登机门数
+	final static int n = 100;
 	public static int[] Hybridization(int[] geneA, int[] geneB, int[][] f, int[][] w) {
 		int[] child = new int[geneA.length];
 		for(int i = 0; i < child.length; i++)
